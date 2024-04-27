@@ -17,7 +17,9 @@ const __dirname = dirname(__filename);
 const app = express();
 
 app.use(
-  cors({ origin: ["http://localhost:5173"] })
+  cors({
+    origin: ["http://localhost:5173", "https://dalleapp.netlify.app"],
+  })
 );
 
 app.use(express.json({ limit: "50mb" }));

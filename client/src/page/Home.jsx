@@ -26,20 +26,24 @@ const Home = () => {
     setLoading(true);
 
     try {
-      // const response = await fetch('https://dalle-arbb.onrender.com/api/v1/post', {
-      const response = await fetch("http://localhost:8080/api/v1/post", {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      const response = await fetch(
+        "https://dall-e-app-zt1k.onrender.com/api/v1/post",
+        {
+          // const response = await fetch("http://localhost:8080/api/v1/post", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (response.ok) {
         const result = await response.json();
-        setAllPosts(result.data.reverse());
+        setAllPosts(result?.data.reverse());
       }
     } catch (err) {
-      alert(err);
+      console.log(err);
+
     } finally {
       setLoading(false);
     }
@@ -51,11 +55,11 @@ const Home = () => {
 
   const handleSearchChange = (e) => {
     clearTimeout(searchTimeout);
-    setSearchText(e.target.value);
+    setSearchText(e.target.value.toLowerCase());
 
     setSearchTimeout(
       setTimeout(() => {
-        const searchResult = allPosts.filter((item) => item.name.toLowerCase().includes(searchText.toLowerCase()) || item.prompt.toLowerCase().includes(searchText.toLowerCase()));
+        const searchResult = allPosts?.filter((item) => item.name.toLowerCase().includes(searchText.toLowerCase()) || item.prompt.toLowerCase().includes(searchText.toLowerCase()));
         setSearchedResults(searchResult);
       }, 500),
     );

@@ -1,7 +1,24 @@
-# Build and Deploy a Full Stack MERN AI Image Generation App  MidJourney & DALL E Clone
-![Image Generation App](https://i.ibb.co/p0f27C2/Thumbnail-9.png)
+Tech Stacks
 
-### [🌟 Become a top 1% Next.js 13 developer in only one course](https://jsmastery.pro/next13)
-### [🚀 Land your dream programming job in 6 months](https://jsmastery.pro/masterclass)
 
-### Launch your development career with project-based coaching - https://www.jsmastery.pro
+Frontend:- Built using React Vite 
+
+Backend:- Node Js, Express js and MongoDB
+
+Open AI API
+
+
+
+You got to chage these keys according to your keys 
+
+
+OPENAI_API_KEY
+
+MONGODB_URL 
+
+CLOUDINARY_CLOUD_NAME
+
+CLOUDINARY_API_KEY
+
+
+CLOUDINARY_API_SECRET
